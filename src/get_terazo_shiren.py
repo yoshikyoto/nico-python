@@ -7,7 +7,7 @@ videos = []
 
 while True:
     api = VideoSearchApiClient()
-    query = "テラゾー シレン"
+    query = "ゲーム テラゾー 風来のシレン"
     result = api.search_by_tag(
         query=query,
         limit=limit,
@@ -15,7 +15,6 @@ while True:
     )
     items = result["data"]
     videos.extend(items)
-    #print(items)
     if len(result["data"]) < 100:
         break;
     offset = offset + limit;

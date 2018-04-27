@@ -2,7 +2,7 @@ import requests
 import logging
 
 class VideoSearchApiClient():
-    """http://site.nicovideo.jp/search-api-docs/search.html
+    """http://site.nicovideo.jp/search-nico-docs/search.html
     """
 
     base_url = "http://api.search.nicovideo.jp/api/v2/video/contents/search"
@@ -11,7 +11,7 @@ class VideoSearchApiClient():
         """タグ検索をする
 
         :param query: スペース区切りだとAND検索
-        http://site.nicovideo.jp/search-api-docs/search.html
+        http://site.nicovideo.jp/search-nico-docs/search.html
         """
         targets = "tags"
         sort = "-startTime"

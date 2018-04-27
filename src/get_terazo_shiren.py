@@ -1,4 +1,5 @@
-from ...api.nico.search_api_client import VideoSearchApiClient
+from nico.api.search_api_client import VideoSearchApiClient
+from nico.domain.video_id import VideoId
 
 limit = 100
 offset = 0
@@ -22,3 +23,5 @@ while True:
 print("-- videos ----------------------------------------")
 for video in videos:
     print(video)
+    video_id = VideoId(video["contentId"])
+    print(video_id.get_number())

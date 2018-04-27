@@ -1,4 +1,4 @@
-from api.nico.search_api_client import VideoSearchApiClient
+from ...api.nico.search_api_client import VideoSearchApiClient
 
 limit = 100
 offset = 0

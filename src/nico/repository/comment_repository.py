@@ -1,5 +1,6 @@
 import os.path
 import urllib.request
+import zipfile
 
 class CommentRepository():
 
@@ -18,7 +19,17 @@ class CommentRepository():
         try:
             print("Download: " + url + "to" + filepath)
             urllib.request.urlretrieve(url, filepath)
-            return True;
+            return True
         except urllib.error.HTTPError:
             print("No Archive")
-            return False;
+            return False
+
+    def unzip_archive(self, src, dest):
+        srcpath = self.base_dir + src
+        destpath = self.base_dir + dest
+        if os.path.isfile(destpath):
+            print("Already unziped")
+            return True
+        zip = zipfile.ZipFile(srcpath, 'r')
+        zip.extractall(destpath)
+        zip.close()
